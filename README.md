@@ -97,12 +97,6 @@ Le projet est organisé de la manière suivante :
 
 ---
 
-## Licence
-
-Ce projet est sous licence MIT. Consultez le fichier `LICENSE` pour plus de détails.
-
----
-
 ## Améliorations futures
 
 - Ajout d'un mode multijoueur.
