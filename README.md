@@ -96,6 +96,13 @@ Le projet est organisé de la manière suivante :
   - Testé et exécuté sur l'émulateur Harvey.
 
 ---
+##Collaborateurs
+
+-Ali Mantach.
+-Shakib YOUSSEF.
+-Mohamad Makke.
+
+---
 
 ## Améliorations futures
 
