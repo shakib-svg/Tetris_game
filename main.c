@@ -7,19 +7,21 @@
 #include "task.h"
 #include "harvey_platform.h"
 #include "xprintf.h"
-
+//////////////////////////
 #define SCREEN_WIDTH  640
 #define SCREEN_HEIGHT 480
-
+/////////////////////////
 #define NUM_SHAPES 7
+/*The board may be any size, although the standard Tetris board is 10 wide and 20 high*/
 #define BOARD_WIDTH 10
 #define BOARD_HEIGHT 20
 #define SQUARE_SIZE 20
-
-static uint32_t frame_buffer[SCREEN_WIDTH * SCREEN_HEIGHT];
+///////////////////
+static uint32_t frame_buffer[SCREEN_WIDTH * SCREEN_HEIGHT];// 640x480 screen res 
 volatile uint32_t color = 0x00ff0000;
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Tetromino shapes with 4 rotations for each
+// Tetromino shapes with 4 rotations for each // 1 cte color for each 
 int shapes[NUM_SHAPES][4][4][2] = {
     // I-shape (4 rotations)
     {
@@ -28,7 +30,7 @@ int shapes[NUM_SHAPES][4][4][2] = {
         {{0,1}, {1,1}, {2,1}, {3,1}},
         {{2,0}, {2,1}, {2,2}, {2,3}}
     },
-    // O-shape (no real rotation)
+    // O-shape (pas de rotation)
     {
         {{0,0}, {1,0}, {0,1}, {1,1}},
         {{0,0}, {1,0}, {0,1}, {1,1}},
@@ -85,8 +87,8 @@ uint32_t shape_colors[NUM_SHAPES] = {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Game state structure
 struct {
-    int board[BOARD_WIDTH][BOARD_HEIGHT];
-    int current_shape[4][2];
+    int board[BOARD_WIDTH][BOARD_HEIGHT]; // size standart de tetris 
+    int current_shape[4][2]; 
     int current_shape_type;
     int current_rotation;
     int current_x, current_y;
@@ -94,6 +96,7 @@ struct {
     int level;
     int lines_cleared;
 } game_state;
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void init_video()
 {
@@ -110,8 +113,8 @@ void draw_square(int x, int y, int width, uint32_t color)
         return;
     }
     int i, j;
-    int x_start = x < 0 ? 0 : x;
-    int y_start = y < 0 ? 0 : y;
+    int x_start = x < 0 ? 0 : x; // si x plus petit que 0 x_start = 0 sinon x=x 
+    int y_start = y < 0 ? 0 : y;//..
     int x_end = x + width;
     int y_end = y + width;
     if (x_end > SCREEN_WIDTH) {
@@ -274,6 +277,7 @@ void check_line_clear() {
         game_state.level = game_state.lines_cleared / 10;
     }
 }
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 volatile int refresh_event = 0;
 
@@ -349,7 +353,6 @@ int main()
     spawn_shape();
     
     // Enable interrupts
-    MOUSE->CR |= MOUSE_CR_IE;
     KEYBOARD->CR |= KEYBOARD_CR_IE;
     minirisc_enable_interrupt(VIDEO_INTERRUPT |KEYBOARD_INTERRUPT);
     minirisc_enable_global_interrupts();
