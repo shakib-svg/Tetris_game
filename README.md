@@ -8,13 +8,11 @@ Ce projet est une implémentation du célèbre jeu Tetris, conçue spécifiqueme
 
 Avant de commencer, assurez-vous de disposer des éléments suivants :
 
-1. **Langage C** : Une base solide en langage C est nécessaire pour comprendre et modifier le projet.
-2. **MiniRISC** : Une architecture RISC simplifiée qui est simulée via un émulateur.
-3. **Emulateur Harvey** : Outil requis pour exécuter et tester le programme sur un environnement simulé.
+- **Langage C** : Une base solide en langage C est nécessaire pour comprendre et modifier le projet.
+- **MiniRISC** : Une architecture RISC simplifiée qui est simulée via un émulateur.
+- **Émulateur Harvey** : Outil requis pour exécuter et tester le programme sur un environnement simulé.
 
 ### Installation de l'émulateur Harvey
-
-L'émulateur Harvey est nécessaire pour exécuter le projet sur un environnement MiniRISC. Voici les étapes pour l'installer :
 
 1. **Cloner le répertoire Harvey** :
    ```bash
@@ -37,9 +35,9 @@ L'émulateur Harvey est nécessaire pour exécuter le projet sur un environnemen
 
 ## Structure du Projet
 
-Le projet est organisé de la manière suivante :
+Le projet est organisé comme suit :
 
-```
+```plaintext
 .
 ├── FreeRTOS           # Source et configurations liées à FreeRTOS
 ├── minirisc           # Fichiers liés à l'architecture MiniRISC
@@ -54,10 +52,10 @@ Le projet est organisé de la manière suivante :
 ### Description des fichiers principaux
 
 - **FreeRTOS** : Contient les fichiers nécessaires pour l'intégration de FreeRTOS dans le projet.
-- **minirisc** : Regroupe les fichiers spécifiques à l'architecture MiniRISC utilisée.
+- **minirisc** : Regroupe les fichiers spécifiques à l'architecture MiniRISC.
 - **support** : Fournit des fonctions utilitaires pour le projet.
 - **xprintf** : Implémente des fonctions d'affichage formatées.
-- **main.c** : Contient tout le code source du jeu Tetris, incluant la logique des pièces, la gestion du tableau de jeu et l'affichage.
+- **main.c** : Contient le code source principal du jeu Tetris, incluant la logique des pièces, la gestion du tableau de jeu et l'affichage.
 - **Makefile** : Simplifie la compilation en une seule commande.
 
 ---
@@ -96,11 +94,12 @@ Le projet est organisé de la manière suivante :
   - Testé et exécuté sur l'émulateur Harvey.
 
 ---
-##Collaborateurs
 
-   -Ali Mantach.
-   -Shakib YOUSSEF.
-   -Mohamad Makke.
+## Collaborateurs
+
+- **Ali Mantach** : Responsable de la gestion du projet et de l'intégration du système MiniRISC.
+- **Shakib Youssef** : Développement de la logique du jeu Tetris et des fonctions principales.
+- **Mohamad Makke** : Implémentation des bibliothèques de support et optimisation pour l'émulateur Harvey.
 
 ---
 
@@ -112,4 +111,7 @@ Le projet est organisé de la manière suivante :
 
 ---
 
+## Support
+
 Si vous avez des questions ou des problèmes, n'hésitez pas à ouvrir une issue dans le dépôt GitHub.
+
