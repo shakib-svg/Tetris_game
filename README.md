@@ -98,9 +98,9 @@ Le projet est organisé de la manière suivante :
 ---
 ##Collaborateurs
 
--Ali Mantach.
--Shakib YOUSSEF.
--Mohamad Makke.
+   -Ali Mantach.
+   -Shakib YOUSSEF.
+   -Mohamad Makke.
 
 ---
 
