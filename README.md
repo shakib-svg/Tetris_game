@@ -66,6 +66,7 @@ Le projet est organisé comme suit :
    Assurez-vous d'être dans le répertoire racine du projet, puis exécutez :
    ```bash
    make
+   make exec
    ```
 
 2. **Exécution avec Harvey** :
